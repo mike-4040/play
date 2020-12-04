@@ -1,0 +1,3 @@
+exports.fixed = {
+    a: 'hello'
+}

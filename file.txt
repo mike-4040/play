@@ -1,4 +1,2 @@
-change 1
-change 2
-
-change in master
+line 1
+line 2
