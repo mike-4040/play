@@ -1,11 +1,7 @@
-const foo = [ 10, 20];
-
-
-function bar( arg) {
-    arg = arg.filter( el => el < 15);
-    console.log('Inside', arg)
+console.time()
+for ( let i = 0; i < 10000000; i++) {
+    //const t = new Date().getTime();
+    const t = Date.now();
 }
-
-bar(foo);
-
-console.log(foo);
+console.timeEnd()
+console.log(Date.now())
