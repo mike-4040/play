@@ -1,3 +1,0 @@
-exports.fixed = {
-    a: 'hello'
-}
