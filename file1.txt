@@ -1,2 +1,4 @@
 Content on master
 change on A
+
+Change on B
