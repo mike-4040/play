@@ -3,5 +3,3 @@ Change on A
 Another change on A
 change on B
 Change on A
-
-change on B

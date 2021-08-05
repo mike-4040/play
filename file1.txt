@@ -1,4 +1,8 @@
 Content on master
 change on A
 
+change on A
+
 Change on B
+resolved
+
