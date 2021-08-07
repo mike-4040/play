@@ -4,11 +4,12 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "libmime": "^5.0.0"
+    "libmime": "^5.0.0",
+    "moment-timezone": "^0.5.33"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js",
+    "start": "TZ=UTC node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
