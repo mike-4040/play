@@ -1,0 +1,23 @@
+{
+  "name": "play",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mike-4040/play.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mike-4040/play/issues"
+  },
+  "homepage": "https://github.com/mike-4040/play#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.14.0"
+  }
+}

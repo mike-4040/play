@@ -1,5 +1,3 @@
-if ({}) {
-    console.log("empty");
-} else {
-    console.log("no empty");
-}
+import assert from 'assert';
+
+assert.ok( '1', 'not truthy')
