@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/app.js",
-  "type_": "module",
+  "type": "module",
   "scripts": {
     "test": "mocha *.spec.js",
-    "start": "npm run build && node lib/app.js",
-    "build": "tsc"
+    "start": "rm -rf lib/ && npm run build && node lib/app.js",
+    "build": "tsc --build"
   },
   "keywords": [],
   "author": "",
