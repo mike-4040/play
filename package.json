@@ -7,7 +7,10 @@
   "scripts": {
     "test": "mocha *.spec.js",
     "start": "rm -rf lib/ && npm run build && node lib/server.js",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "cont:build": "docker build -t cloud_run .",
+    "cont:start": "docker run -p 3001:3000 -d --name cloud_run -e \"PG_HOST=host.docker.internal\" cloud_run",
+    "cont:stop": "docker stop cloud_run && docker rm cloud_run"
   },
   "keywords": [],
   "author": "",

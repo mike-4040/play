@@ -3,7 +3,7 @@ import pg, { ClientConfig } from 'pg';
 const { Client } = pg;
 
 export const queryDb = async () => {
-  let client:  pg.Client;
+  let client:  pg.Client | null = null;
   try {
     const pgConfig: ClientConfig = {
       host: process.env.PG_HOST,
@@ -25,7 +25,7 @@ export const queryDb = async () => {
     return rows;
   } catch (err) {
     console.error(err);
-    // client.end();
+    client?.end();
     return err;
   }
 };
