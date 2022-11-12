@@ -3,7 +3,7 @@ import pg, { ClientConfig } from 'pg';
 const { Client } = pg;
 
 export const queryDb = async () => {
-  let client:  pg.Client | null = null;
+  let client: pg.Client | null = null;
   try {
     const pgConfig: ClientConfig = {
       host: process.env.PG_HOST,
@@ -15,17 +15,18 @@ export const queryDb = async () => {
 
     client = new Client(pgConfig);
 
-    client.connect();
+    await client.connect();
+
     const { rows } = await client.query(`
       SELECT *, NOW()
-      FROM roles ;`);
+      FROM staff `);
 
     client.end();
     console.log({ rows });
     return rows;
   } catch (err) {
-    console.error(err);
-    client?.end();
-    return err;
+    console.log('queryDb-error', err);
+    await client?.end();
+    return { success: false };
   }
 };
