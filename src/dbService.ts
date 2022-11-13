@@ -18,8 +18,8 @@ export const queryDb = async () => {
     await client.connect();
 
     const { rows } = await client.query(`
-      SELECT *, NOW()
-      FROM staff `);
+      SELECT name
+      FROM language `);
 
     client.end();
     console.log({ rows });
