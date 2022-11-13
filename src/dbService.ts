@@ -17,8 +17,8 @@ export const queryDb = async () => {
 
     client.connect();
     const { rows } = await client.query(`
-      SELECT *, NOW()
-      FROM roles ;`);
+      SELECT name
+      FROM language `);
 
     client.end();
     console.log({ rows });
