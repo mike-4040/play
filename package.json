@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha *.spec.js",
-    "start": "rm -rf lib/ && npm run build && node lib/server.js",
-    "build": "tsc --build",
+    "start": "rm -rf lib/ && npm run build && node lib/index.js",
+    "build": "tsc",
     "cont:build": "docker build -t cloud_run .",
     "cont:start": "docker run -p 3001:3000 -d --name cloud_run -e \"PG_HOST=host.docker.internal\" cloud_run",
     "cont:stop": "docker stop cloud_run && docker rm cloud_run"
@@ -16,18 +16,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.3.3",
-    "@types/express": "^4.17.14",
-    "@types/mocha": "^9.1.1",
     "@types/node": "^18.6.3",
-    "@types/pg": "^8.6.5",
-    "chai": "^4.3.6",
-    "mocha": "^10.0.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.9.3"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "pg": "^8.8.0"
+    "express": "^4.18.2"
   }
 }

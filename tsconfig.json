@@ -15,7 +15,7 @@
     "paths": {
       "*": ["src/types/*", "node_modules/*"]
     },
-    "types": ["mocha", "node"],
+    "types": ["node"],
     "removeComments": false,
     "allowSyntheticDefaultImports": true,
     "useUnknownInCatchVariables": false,
