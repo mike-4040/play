@@ -5,7 +5,7 @@
   "main": "lib/server.js",
   "type": "module",
   "scripts": {
-    "test": "mocha *.spec.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "rm -rf lib/ && npm run build && node lib/index.js",
     "build": "tsc",
     "cont:build": "docker build -t cloud_run .",
@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.6.3",
+    "@types/node": "^18.11.9",
     "typescript": "^4.9.3"
   },
   "dependencies": {
