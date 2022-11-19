@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "rm -rf lib/ && npm run build && node lib/institutionTagsSolution.js",
+    "start": "tsc --watch & nodemon --watch lib node lib/index.js",
     "build": "tsc",
     "cont:build": "docker build -t cloud_run .",
     "cont:start": "docker run -p 3001:3000 -d --name cloud_run -e \"PG_HOST=host.docker.internal\" cloud_run",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
   }
 }
