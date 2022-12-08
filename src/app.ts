@@ -3,17 +3,17 @@ import { validate } from './validate.js';
 
 const post: any = {
   title: 'Some title',
-  age: 10,
+  age: 10.1,
   // someBadProp: 'someBadValue',
 };
 
-console.log('\n', { post });
+console.log('\n', { post }, '\n');
 
 try {
   await validate(post, Post);
 
-  console.log('\n', 'Valid!');
+  console.log('Valid!');
 } catch (errors) {
-  console.log('\n', 'Invalid!');
+  console.log('Invalid!');
   console.dir(errors, { depth: null });
 }
