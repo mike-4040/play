@@ -13,14 +13,18 @@
     "baseUrl": ".",
     "moduleResolution": "node",
     "paths": {
-      "*": ["src/types/*", "node_modules/*"],
+      "*": ["src/types/*", "node_modules/*"]
     },
     "preserveWatchOutput": true,
     "types": ["node"],
     "removeComments": false,
     "allowSyntheticDefaultImports": true,
     "useUnknownInCatchVariables": false,
-    "lib": ["ES2022"]
+    "lib": ["ES2022"],
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    // "strictBindCallApply": true,
   },
   "include": ["src"],
   "exclude": ["node_modules"]
