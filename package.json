@@ -2,15 +2,13 @@
   "name": "play",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/server.js",
+  "main": "lib/app.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc --watch & nodemon --watch lib node lib/index.js",
+    "start": "tsc --watch & nodemon --watch lib",
     "build": "tsc",
-    "cont:build": "docker build -t cloud_run .",
-    "cont:start": "docker run -p 3001:3000 -d --name cloud_run -e \"PG_HOST=host.docker.internal\" cloud_run",
-    "cont:stop": "docker stop cloud_run && docker rm cloud_run"
+    "cont": "docker build -t play . && docker run -p 3000:3000 --name play -e \"PG_HOST=host.docker.internal\" --rm play"
   },
   "keywords": [],
   "author": "",
