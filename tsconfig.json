@@ -22,9 +22,7 @@
     "useUnknownInCatchVariables": false,
     "lib": ["ES2022"],
     "strictPropertyInitialization": false,
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    // "strictBindCallApply": true,
   },
   "include": ["src"],
   "exclude": ["node_modules"]
