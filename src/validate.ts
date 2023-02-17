@@ -3,7 +3,7 @@ import { type ClassConstructor, plainToInstance } from 'class-transformer';
 
 export async function validate<T extends object>(
   input: any,
-  someClass: ClassConstructor<T>
+  SomeClass: ClassConstructor<T>
 ) {
   if (typeof input !== 'object' || Array.isArray(input) || input === null) {
     throw new Error('Invalid input, should be an object');
@@ -16,5 +16,5 @@ export async function validate<T extends object>(
     validationError: { target: false, value: false },
   };
 
-  return validateOrReject(plainToInstance(someClass, input), option);
+  return validateOrReject(plainToInstance(SomeClass, input), option);
 }
