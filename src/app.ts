@@ -1,19 +1,9 @@
-import { Post } from './post.dto.js';
-import { validate } from './validate.js';
+import { type SomeInterface } from './file.js';
 
-const post: any = {
-  title: 'Some title',
-  age: 10.1,
-  // someBadProp: 'someBadValue',
+export const localConst: SomeInterface = {
+  someProperty: 'some value 2',
 };
 
-console.log('\n', { post }, '\n');
+console.log({ localConst });
 
-try {
-  await validate(post, Post);
-
-  console.log('Valid!');
-} catch (errors) {
-  console.log('Invalid!');
-  console.dir(errors, { depth: null });
-}
+// console.log({ alienConst });
