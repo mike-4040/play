@@ -1,9 +1,23 @@
-import { type SomeInterface } from './file.js';
+import { scheduler } from 'node:timers/promises';
 
-export const localConst: SomeInterface = {
-  someProperty: 'some value 2',
-};
 
-console.log({ localConst });
 
-// console.log({ alienConst });
+
+async function asyncFunction(param: string) {
+  await scheduler.wait(1_000);
+  console.timeLog();
+  console.log('asyncFunction', param);
+  return param + '1';
+}
+
+async function main(param: string) {
+  console.time();
+  return asyncFunction(param).then(asyncFunction).then(asyncFunction);
+}
+
+const result = await main('Hello');
+console.timeLog();
+console.log('main, final result', result);
+
+
+export default {};

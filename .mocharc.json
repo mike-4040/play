@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/mocharc",
+  "reporter": "spec",
+  "bail": true,
+  "exit": true,
+  "timeout": 7500,
+  "require": [
+    "node_modules/source-map-support/register",
+    "node_modules/ts-node/register"
+  ],
+  "extension": [
+    "ts"
+  ],
+  "parallel": false
+}
