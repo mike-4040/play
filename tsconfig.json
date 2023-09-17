@@ -24,6 +24,6 @@
     "strictPropertyInitialization": false,
     "experimentalDecorators": true,
   },
-  "include": ["src"],
+  "include": ["src", "main.js"],
   "exclude": ["node_modules"]
 }
