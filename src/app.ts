@@ -29,37 +29,22 @@ class API {
   }
 
   async #getRequestMutex(requestId: string): Promise<Mutex> {
-
-    if (!this.#mutexes.has(requestId)) {
-      const release = await this.#mutexesMapMutex.acquire();
-      try {
+    const release = await this.#mutexesMapMutex.acquire();
+    try {
+      if (!this.#mutexes.has(requestId)) {
         this.#mutexes.set(requestId, new Mutex());
-      } finally {
-        release();
       }
+      return this.#mutexes.get(requestId) as Mutex;
+    } finally {
+      release();
     }
-    return this.#mutexes.get(requestId) as Mutex;
   }
 
   async #wrapCall<T>(
     requestId: string,
     func: () => Promise<T>,
   ): Promise<T> {
-    let requestMutex: Mutex | undefined;
-
-    // Ensures that only one mutex is created per unique request ID at a time
-    // and that there cannot accidentally be two mutexes for the same unique request ID
-    const release = await this.#mutexesMapMutex.acquire();
-    try {
-      requestMutex = this.#mutexes.get(requestId);
-      if (!requestMutex) {
-        requestMutex = new Mutex();
-        this.#mutexes.set(requestId, requestMutex);
-      }
-    } finally {
-      release();
-    }
-    console.log('requestMutex', requestId, requestMutex.isLocked())
+    const requestMutex = await this.#getRequestMutex(requestId);
     return requestMutex.runExclusive(async (): Promise<T> => func());
   }
 
